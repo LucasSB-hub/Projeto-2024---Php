@@ -106,7 +106,7 @@ window.onload = function () {
 
 /* ATENÇÃO: 
 Este enorme bloco de comentário contém o código que inicia o processo de Autenticação em Dois Fatores (2FA), mas é apenas provisório, 
-pois não tem servidor em backend para fazê-lo funcionar. Veja o código abaixo (para facilitar a leitura, remova a marcação de bloco de comentário, 
+pois não servidor em backend para fazê-lo funcionar. Veja o código abaixo (para facilitar a leitura, remova a marcação de bloco de comentário, 
 mas certifique-se de refazê-la):
 
     // Iniciar processo de autenticação em dois fatores, mas para que seja devidamente efetuado, é necessário ter um servidor em backend
@@ -144,3 +144,11 @@ FIM DO BLOCO DE COMENTÁRIO*/
     });
 }
 
+        // JavaScript adicional do Miguel
+        let menu = document.querySelector('#menu-icon');
+        let navlist = document.querySelector('.navlist');
+
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('open')
+}
