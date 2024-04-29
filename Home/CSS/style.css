@@ -1,0 +1,219 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #021024;
+    margin-left: -0.5%;
+}
+
+.logo {
+    position: relative;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    margin-top: 2%;
+    margin-left: -1%;
+    animation: 2s ease-out 0s 1 EntrarSuave;
+    animation: floatAnimation 3s infinite alternate;
+}
+
+
+
+#h1v1 {
+    font-family: "Pixelify Sans", sans-serif;
+    color: #C1E8FF;
+    text-align: center;
+    margin-top: -8%;
+    font-size: 400%;
+    animation: 2s ease-out 0s 1 EntrarSuave;
+    animation: floatAnimation 3s infinite alternate;
+}
+
+#h4v1 {
+    font-family: "Pixelify Sans", sans-serif;
+    color: #C1E8FF;
+    text-align: center;
+    margin-top: 3.5%;
+    font-size: 100%;
+    animation: 3.5s ease-out 0s 1 EntrarSuave;
+
+}
+.alasdejogos {
+    font-family: "Pixelify Sans", sans-serif;
+    color: #C1E8FF;
+    text-align: center;
+    margin-top: 4%;
+    font-size: 150%;
+    animation: 3.5s ease-out 0s 1 EntrarSuave;
+}
+
+.alasdejogos2 {
+    font-family: "Pixelify Sans", sans-serif;
+    color: #C1E8FF;
+    text-align: center;
+    margin-top: 2%;
+    font-size: 150%;
+    animation: 3.5s ease-out 0s 1 EntrarSuave;
+}
+
+.alasdejogos3 { /*para a terceira coluna e quarta coluna*/
+    font-family: "Pixelify Sans", sans-serif;
+    color: #C1E8FF;
+    text-align: center;
+    margin-top: 2%;
+    font-size: 150%;
+    animation: 3.5s ease-out 0s 1 EntrarSuave;
+}
+
+
+
+.image-corridor {
+    display: flex;
+    gap: 10px; /* Espaçamento entre as imagens */
+    margin-left: 6%;
+    margin-top: 1%;
+}
+
+.image-corridor2 { /*para a segunda coluna*/
+    display: flex;
+    gap: 10px; /* Espaçamento entre as imagens */
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+
+.image-corridor3 { /*para a terceira coluna e quarta coluna*/
+    display: flex;
+    gap: 10px; /* Espaçamento entre as imagens */
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+
+.image-corridor img {
+    width: 55vh; /* Tamanho padrão das imagens */
+    height: auto; /* Mantém a proporção original */
+    transition: opacity 0.5s ease; /* para a animação de opacidade */
+    margin-right: 5vh;
+    border-radius: 10px;
+    animation: 3.8s ease-out 0s 1 slideInFromLeft;
+    
+}
+
+.image-corridor2 img { /* para a segunda coluna*/
+    width: 20vh; /* Tamanho padrão das imagens */
+    height: auto; /* Mantém a proporção original */
+    transition: opacity 0.5s ease; /* para a animação de opacidade */
+    margin-right: 3vh;
+    border-radius: 10px;
+    animation: 4s ease-out 0s 1 slideInFromLeft;
+    
+}
+
+
+.image-corridor3 img { /* para a terceira coluna*/
+    width: 20vh; /* Tamanho padrão das imagens */
+    height: auto; /* Mantém a proporção original */
+    transition: opacity 0.5s ease; /* para a animação de opacidade */
+    margin-right: 3vh;
+    border-radius: 10px;
+    animation: 3.6s ease-out 0s 1 slideInFromLeft;
+    
+}
+
+.image-corridor4 img { /* para a terceira coluna*/
+    width: 20vh; /* Tamanho padrão das imagens */
+    height: auto; /* Mantém a proporção original */
+    transition: opacity 0.5s ease; /* para a animação de opacidade */
+    margin-right: 3vh;
+    border-radius: 10px;
+    animation: 3.6s ease-out 0s 1 slideInFromLeft;
+    
+}
+
+
+.image-corridor img:hover {
+    opacity: 0.5; /* intensidade da diminuição de opacidade */
+}
+
+.image-corridor2 img:hover {
+    opacity: 0.5; /* intensidade da diminuição de opacidade */
+}
+
+.image-corridor3 img:hover {
+    opacity: 0.5; /* intensidade da diminuição de opacidade */
+}
+
+
+/* para scroll na rolagem do site */
+/* Estilo para a barra de rolagem */
+::-webkit-scrollbar {
+    width: 0.4vh; /* Largura da barra de rolagem */
+}
+  
+  /* Estilo para a alça (parte móvel) da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background: #00a3e9; /* Cor da alça */
+}
+  
+  /* Estilo para a alça da barra de rolagem ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background: #003ad9; /* Cor da alça ao passar o mouse */
+}
+  
+
+
+/* ANIMAÇÕES */
+
+@keyframes floatAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {        transform: translateY(-8px);
+    }
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9); /* Aumenta o tamanho durante a pulsação */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;  /* Inicia com opacidade 0 (totalmente transparente) */
+    }
+    50% {
+        transform: translateX(7%);
+        opacity: 0.5;  /* Inicia com opacidade 0 (totalmente transparente) */
+      }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;  /* Inicia com opacidade 0 (totalmente transparente) */
+    }
+  }
+
+
+@keyframes EntrarSuave {
+    0% {
+      opacity: 0;  /* Inicia com opacidade 0 (totalmente transparente) */
+    }
+    50% {
+        opacity: 0.5;  /* Inicia com opacidade 0 (totalmente transparente) */
+      }
+    100% {
+      opacity: 1;  /* Inicia com opacidade 0 (totalmente transparente) */
+    }
+}
+
+
+/* ESTÉTICO */
+
+html {
+    scroll-behavior: smooth;
+}
