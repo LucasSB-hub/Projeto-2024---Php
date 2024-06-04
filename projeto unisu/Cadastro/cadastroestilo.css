@@ -166,10 +166,10 @@ label {
 input[type="text"], input[type="date"], input[type="tel"], input[type="email"], input[type="password"] {
     width: 100%;
     font-size: larger;
-    color: white;
+    color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0);
     border: none; /* Remove todas as bordas */
-    border-bottom: 1px solid black; /* Adiciona uma borda inferior */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.53); /* Adiciona uma borda inferior */
     outline: none; /* Remove a borda ao focar */
     
 }
