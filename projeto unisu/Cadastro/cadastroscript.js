@@ -104,41 +104,6 @@ window.onload = function () {
         localStorage.setItem('nome_usuario', document.getElementById('nome_usuario').value);
         localStorage.setItem('senha', senhaInput.value);
 
-/* ATENÇÃO: 
-Este enorme bloco de comentário contém o código que inicia o processo de Autenticação em Dois Fatores (2FA), mas é apenas provisório, 
-pois não servidor em backend para fazê-lo funcionar. Veja o código abaixo (para facilitar a leitura, remova a marcação de bloco de comentário, 
-mas certifique-se de refazê-la):
-
-    // Iniciar processo de autenticação em dois fatores, mas para que seja devidamente efetuado, é necessário ter um servidor em backend
-        iniciarAutenticacaoDoisFatores();
-    });
-
-
-    // Função para iniciar o processo de autenticação em dois fatores
-    function iniciarAutenticacaoDoisFatores() {
-        // Enviar código de verificação (exemplo: via alerta)
-        var codigoVerificacao = gerarCodigoVerificacao();
-        alert('Um código de verificação foi enviado para o seu dispositivo: ' + codigoVerificacao);
-
-
-        // Pedir ao usuário para inserir o código de verificação
-        var codigoInserido = prompt('Por favor, insira o código de verificação enviado para o seu dispositivo:');
-
-
-        // Verificar se o código inserido pelo usuário está correto
-        if (codigoInserido === codigoVerificacao) {
-            // Se o código estiver correto, autenticar o usuário
-            alert('Autenticação bem-sucedida! Você foi autenticado com sucesso.');
-            // Aqui você pode redirecionar o usuário para a próxima página ou realizar outras ações após a autenticação bem-sucedida
-        } else {
-            // Se o código estiver incorreto, informar ao usuário e negar o acesso
-            alert('Código de verificação incorreto. Acesso negado.');
-        }
-    }
-}
-
-FIM DO BLOCO DE COMENTÁRIO*/
-
         // Redirecionar para a página de login (tela de Ana) após o armazenamento dos dados
         window.location.href = "login.html";
     });
