@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Ubuntu", sans-serif;
+}
+
+/* Estilos para o corpo da página */
+body {
+    background-color: #ecf0f1;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Estilo para o cabeçalho/barra de navegador da página */
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 35px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .50s ease;
+    
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo img{
+    width: 110px;
+    height: auto;
+}
+
+
+
+@media(max-width:1300px){
+    header{
+        padding: 20px 4%;
+    }
+}
+
+@media(max-width:1050px){
+    .logo{
+        font-size: 25px;
+    }
+    .logo img{
+        width: 40px;
+        height: auto;
+    }
+}
+
+@media(max-width:940px){
+    #menu-icon{
+        display: block;
+    }
+    .logo img{
+        width: 100px;
+    }
+}
+
+/* Estilos para o contêiner principal */
+.container {
+    justify-content: center;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 2%;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top:80px;
+    margin-bottom: 50px;
+    font-size: 100%;
+    background-color: #5483b3da;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(194, 187, 187, 0.242);
+    border-radius: 25px 25px;
+}
+
+@media(max-width:1300px){
+    .container{
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 2%;
+        margin: 100px 50px 50px 50px;
+        font-size: 100%;
+    }
+}
+
+.caixa {
+    display: inline-block;
+    width: 35%; /* Define a largura para que dois campos caibam em uma linha */
+    margin-right: 5%; /* Margem à direita para separar os campos */
+    margin-left: 8%; /* Margem à esquerda para melhor justificar os campos dentro do formulário */
+    
+}
+
+@media(max-width:940px){
+    .caixa{
+        font-size: smaller;
+    }
+}
+
+/* Estilos para os labels */
+label {
+    font-size: smaller;
+}
+
+@media(max-width:940px){
+    label{
+        font-size: smaller;
+    }
+}
+
+/* Estilos para os inputs de texto, data, telefone, email e senha */
+input[type="text"], input[type="date"], input[type="tel"], input[type="email"], input[type="password"] {
+    width: 100%;
+    height: 35px;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.045);
+    border: none; /* Remove todas as bordas */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.305); /* Adiciona uma borda inferior */
+    outline: none; /* Remove a borda ao focar */
+    
+}
+
+@media(max-width:940px){
+    input[type="text"], input[type="date"], input[type="tel"], input[type="email"], input[type="password"]{
+        font-size: smaller;
+    }
+}
+
+/* Estilos para os selects, as opções de sexo */
+select {
+    width: 100%;
+    font-size: larger;
+    color: white;
+    border: none; /* Rrgba(0, 0, 0, 0)s */
+    background-color: rgba(0, 0, 0, 0.122);
+    
+}
+
+@media(max-width:940px){
+    select{
+        font-size: smaller;
+    }
+}
+
+/* Estilos para os botões */
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+input[type="submit"] {
+    color: #ffffff;
+    width: 25%;
+    height: 50%;
+    cursor: pointer; /* Adiciona o ponteiro do mouse */
+    transition: background-color 0.3s ease; /* Transição suave para mudanças de cor de fundo */
+    border: none;
+    padding: 7px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    background: #052659;
+    border-radius: 5px;
+}
+
+input[type="reset"] {
+    color: #ffffff;
+    width: 25%;
+    height: 50%;
+    cursor: pointer; /* Adiciona o ponteiro do mouse */
+    transition: background-color 0.3s ease; /* Transição suave para mudanças de cor de fundo */
+    border: none;
+    padding: 7px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    background: #052659;
+    border-radius: 5px;
+}
+
+/* Estilos para quando o mouse passa sobre os botões */
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #c1e8ff; /* Ajusta o fundo para um tom mais escuro */
+    color: #09090a;
+    text-shadow: 0 0 5px rgba(70, 70, 70, 0.485); /* Adiciona um brilho claro à fonte */
+}
+
+input[type="reset"]:hover {
+    background-color: #c1e8ff; /* Ajusta o fundo para um tom mais escuro */
+    color: #09090a;
+    text-shadow: 0 0 5px rgba(70, 70, 70, 0.485); /* Adiciona um brilho claro à fonte */
+}
+
+@media(max-width:940px){
+    input[type="submit"]{
+        font-size: 75%;
+        justify-content: center;
+    }
+}
+
+@media(max-width:940px){
+    input[type="reset"]{
+        font-size: 75%;
+        justify-content: center;
+    }
+}
+
+/* Estilos para o cabeçalho h1 */
+h1 {
+    display: flex;
+    color: white;
+    justify-content: left;
+    font-size: 275%;
+    margin-top: 3%;
+    margin-left: 8.5%;
+    padding: 0%;
+}
+
+@media(max-width:940px){
+    h1{
+        display: flex;
+        color: white;
+        justify-content: center;
+        font-size: 225%;
+        margin-top: 3%;
+        margin-left: -1%;
+        padding: 0%;
+    }
+}
+
+/* Estilos para a seção de formulário */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilos para o formulário */
+form {
+    margin: 1%;
+    color: white;
+}
