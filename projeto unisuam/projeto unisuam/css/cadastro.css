@@ -14,59 +14,6 @@ body {
     background-position: center;
 }
 
-/* Estilo para o cabeçalho/barra de navegador da página */
-
-header{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    padding: 35px 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: all .50s ease;
-    
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-    
-}
-
-.logo img{
-    width: 110px;
-    height: auto;
-}
-
-
-
-@media(max-width:1300px){
-    header{
-        padding: 20px 4%;
-    }
-}
-
-@media(max-width:1050px){
-    .logo{
-        font-size: 25px;
-    }
-    .logo img{
-        width: 40px;
-        height: auto;
-    }
-}
-
-@media(max-width:940px){
-    #menu-icon{
-        display: block;
-    }
-    .logo img{
-        width: 100px;
-    }
-}
-
 /* Estilos para o contêiner principal */
 .container {
     justify-content: center;
