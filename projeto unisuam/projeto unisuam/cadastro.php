@@ -21,95 +21,125 @@
                 <h1> Cadastro </h1> <br>
 
                 <section class="form-box"> <!-- Tudo dentro desta div "section" é o formulário contendo todas as caixas de imput. -->
-                                    
-                    <form id="cadastro" method="post" action="">
-                        <div class="caixa">
-                                <label for="nome"> <b> Nome Completo:</b> </label><br>
-                                        <input type="text" id="nome" name="nome" 
-                                        pattern="^[a-zA-Z\u00C0-\u00FF\s]*$" 
-                                        required><br><br> <!-- Caixa para registrar o nome completo -->
-                        </div>
-                        <div class="caixa">                                                    
-                                <label for="nome_materno"> <b>Nome Materno:</b> </label><br>
-                                        <input type="text" id="nome_materno" name="nome_materno" 
-                                        pattern="^[a-zA-Z\u00C0-\u00FF\s]*$" 
-                                        required><br><br> <!-- Caixa para registrar o nome da sua mãe -->
-                        </div>
-                        <div class="caixa">
-                        <label for="cpf"> <b>CPF:</b> </label><br>    
-                                <input type="text" id="cpf" 
-                                name="cpf" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
-                                placeholder="000.000.000-00"  maxlength="14" 
-                                required><br><br> <!-- Caixa para registrar o seu CPF; o pattern indica, por exemplo, 123.456.789-12 // a pontuação e o traço devem ser respeitados // -->
-                        </div>
-                        <div class="caixa">                                
-                        <label for="data_nascimento"> <b>Data de Nascimento:</b> </label><br>
-                                <input type="date" 
-                                id="data_nascimento" name="data_nascimento" 
-                                required><br><br> <!-- Caixa para registrar o dia em que nasceu -->
-                        </div>
-                        <div class="caixa">                                
-                        <label for="sexo"> <b>Sexo:</b> </label><br>
-                                <select id="sexo" 
-                                    name="sexo" required> 
-                                    <option value="feminino">Feminino</option> 
-                                    <option value="masculino">Masculino</option>
-                                    <option value="outro">Outro</option>
-                                    <option value="vazio">Prefiro não dizer</option>
-                                </select><br><br> <!-- Caixa para registrar o seu sexo, se é masculino ou feminino -->
-                        </div>
-                        <div class="caixa">                            
-                                <label for="celular"> <b>Número de Celular:</b> </label><br>
-                                        <input type="tel"  
-                                        name="celular" pattern="\(\d{2}\) \d{5}-\d{4}" maxlength="15"
-                                        placeholder="Ex.: (11) 91234-5678" id="celular"
-                                        required><br><br> <!-- Caixa para registrar o seu número de celular; o pattern indica, por exemplo, (11) 91234-5678 // o traço e os parênteses devem ser respeitados // -->
-                        </div>
-                        <div class="caixa">
-                                <label for="telefone_fixo"> <b>Número de Telefone Fixo:</b> </label><br>
-                                        <input type="tel"  
-                                        name="telefone_fixo" pattern="\(\d{2}\) \d{4}-\d{4}" maxlength="14"
-                                        placeholder="Ex.: (11) 1234-5678" id="telefone_fixo"
-                                        required><br><br> <!-- Caixa para registrar o número do seu telefone fixo; o pattern indica, por exemplo, (11) 1234-5678 // o traço e os parênteses devem ser respeitados // -->
-                        </div>
-                        <div class="caixa">                                
-                                <label for="endereco"> <b>Endereço Completo:</b> </label><br>
-                                        <input type="text"  
-                                        name="endereco" id="endereco"
-                                        required><br><br> <!-- Caixa para registrar o seu endereço residencial -->
-                        </div>
-                        <div class="caixa">                                
-                                <label for="email"> <b>E-mail:</b> </label><br> 
-                                        <input type="email"  
-                                        name="email" id="email"
-                                        required><br><br> <!-- Caixa para registrar o seu e-mail -->
-                        </div>
-                        <div class="caixa">                                
-                                <label for="nome_usuario"> <b>Nome de Usuário/Login:</b> </label><br>
-                                        <input type="text" 
-                                        name="nome_usuario" id="nome_usuario"
-                                        required><br><br> <!-- Caixa para registrar o seu nome como usuário -->
-                        </div>                                
-                        <div class="caixa">
-                                <label for="senha"> <b>Senha:</b> </label><br>
-                                        <input type="password" minlength="5"
-                                        name="senha" id="senha" 
-                                        required><br><br> <!-- Caixa para registrar a senha para o seu perfil aqui no Space Gamer -->
-                        </div>
-                        <div class="caixa">                                
-                                <label for="confirmacao_senha"> <b>Confirmação de Senha:</b> </label><br>
-                                        <input type="password"  minlength="5"
-                                        name="confirmacao_senha" id="confirmacao_senha"
-                                        required><br><br> <!-- Caixa para confirmar a sua senha -->
-                        </div>
-                        <div id="buttons">
-                            <input type="submit" value="Enviar"> <!-- Botão para finalizar (submit/Enviar) o cadastro -->
-                            <input type="reset" value="Refazer"> <!-- Botão para ara refazer (reset/Limpar Tela) o cadastro -->
-                        </div>
-                        <div class="skip">
-                                <a href="login.html"> Já possui conta? </a>
-                        </div>
-                    </form>
+
+                        <?php
+                        if (isset($_POST["submit"])) {
+                                $nome = $_POST["nome"];
+                                $nome_materno = $_POST["nome_materno"];
+                                $cpf = $_POST["cpf"];
+                                $data_nascimento = $_POST["data_nascimento"];
+                                $sexo = $_POST["sexo"];
+                                $celular = $_POST["celular"];
+                                $telefone_fixo = $_POST["telefone_fixo"];
+                                $endereco = $_POST["endereco"];
+                                $email = $_POST["email"];
+                                $nome_usuario = $_POST["nome_usuario"];
+                                $senha = $_POST["senha"];
+                                $confirmacao_senha = $_POST["confirmacao_senha"];
+
+                                $senhaHash = 'senha_hash'($senha, PASSWORD_DEFAULT);
+                                require_once "db_config.php";
+                                $sql = "INSERT INTO cadastro_db (nome, nome_materno, cpf, data_nascimento, sexo, celular, telefone_fixo, endereco, email, nome_usuario, senha) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                                $stmt = mysqli_stmt_init($conn);
+                                $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+                                if ($prepareStmt) {
+                                        mysqli_stmt_bind_param($stmt, "sss", $nome, $nome_materno, $cpf, $data_nascimento, $sexo, $celular, $telefone_fixo, $endereco, $email, $nome_usuario, $senhaHash);
+                                        mysqli_stmt_execute($stmt);
+                                        echo "<div class='alert alert-sucess'>Cadastrado!</div>";
+                                }else{
+                                        die("Algo deu errado!");
+                                }
+                        }
+                        ?>
+
+                        <form id="cadastro" method="post" action="cadastro.php">
+                                <div class="caixa">
+                                        <label for="nome"> <b> Nome Completo:</b> </label><br>
+                                                <input type="text" id="nome" name="nome" 
+                                                pattern="^[a-zA-Z\u00C0-\u00FF\s]*$" 
+                                                required><br><br> <!-- Caixa para registrar o nome completo -->
+                                </div>
+                                <div class="caixa">                                                    
+                                        <label for="nome_materno"> <b>Nome Materno:</b> </label><br>
+                                                <input type="text" id="nome_materno" name="nome_materno" 
+                                                pattern="^[a-zA-Z\u00C0-\u00FF\s]*$" 
+                                                required><br><br> <!-- Caixa para registrar o nome da sua mãe -->
+                                </div>
+                                <div class="caixa">
+                                <label for="cpf"> <b>CPF:</b> </label><br>    
+                                        <input type="text" id="cpf" 
+                                        name="cpf" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                                        placeholder="000.000.000-00"  maxlength="14" 
+                                        required><br><br> <!-- Caixa para registrar o seu CPF; o pattern indica, por exemplo, 123.456.789-12 // a pontuação e o traço devem ser respeitados // -->
+                                </div>
+                                <div class="caixa">                                
+                                <label for="data_nascimento"> <b>Data de Nascimento:</b> </label><br>
+                                        <input type="date" 
+                                        id="data_nascimento" name="data_nascimento" 
+                                        required><br><br> <!-- Caixa para registrar o dia em que nasceu -->
+                                </div>
+                                <div class="caixa">                                
+                                <label for="sexo"> <b>Sexo:</b> </label><br>
+                                        <select id="sexo" 
+                                        name="sexo" required> 
+                                        <option value="feminino">Feminino</option> 
+                                        <option value="masculino">Masculino</option>
+                                        <option value="outro">Outro</option>
+                                        <option value="vazio">Prefiro não dizer</option>
+                                        </select><br><br> <!-- Caixa para registrar o seu sexo, se é masculino ou feminino -->
+                                </div>
+                                <div class="caixa">                            
+                                        <label for="celular"> <b>Número de Celular:</b> </label><br>
+                                                <input type="tel"  
+                                                name="celular" pattern="\(\d{2}\) \d{5}-\d{4}" maxlength="15"
+                                                placeholder="Ex.: (11) 91234-5678" id="celular"
+                                                required><br><br> <!-- Caixa para registrar o seu número de celular; o pattern indica, por exemplo, (11) 91234-5678 // o traço e os parênteses devem ser respeitados // -->
+                                </div>
+                                <div class="caixa">
+                                        <label for="telefone_fixo"> <b>Número de Telefone Fixo:</b> </label><br>
+                                                <input type="tel"  
+                                                name="telefone_fixo" pattern="\(\d{2}\) \d{4}-\d{4}" maxlength="14"
+                                                placeholder="Ex.: (11) 1234-5678" id="telefone_fixo"
+                                                required><br><br> <!-- Caixa para registrar o número do seu telefone fixo; o pattern indica, por exemplo, (11) 1234-5678 // o traço e os parênteses devem ser respeitados // -->
+                                </div>
+                                <div class="caixa">                                
+                                        <label for="endereco"> <b>Endereço Completo:</b> </label><br>
+                                                <input type="text"  
+                                                name="endereco" id="endereco"
+                                                required><br><br> <!-- Caixa para registrar o seu endereço residencial -->
+                                </div>
+                                <div class="caixa">                                
+                                        <label for="email"> <b>E-mail:</b> </label><br> 
+                                                <input type="email"  
+                                                name="email" id="email"
+                                                required><br><br> <!-- Caixa para registrar o seu e-mail -->
+                                </div>
+                                <div class="caixa">                                
+                                        <label for="nome_usuario"> <b>Nome de Usuário/Login:</b> </label><br>
+                                                <input type="text" 
+                                                name="nome_usuario" id="nome_usuario"
+                                                required><br><br> <!-- Caixa para registrar o seu nome como usuário -->
+                                </div>                                
+                                <div class="caixa">
+                                        <label for="senha"> <b>Senha:</b> </label><br>
+                                                <input type="password" minlength="5"
+                                                name="senha" id="senha" 
+                                                required><br><br> <!-- Caixa para registrar a senha para o seu perfil aqui no Space Gamer -->
+                                </div>
+                                <div class="caixa">                                
+                                        <label for="confirmacao_senha"> <b>Confirmação de Senha:</b> </label><br>
+                                                <input type="password"  minlength="5"
+                                                name="confirmacao_senha" id="confirmacao_senha"
+                                                required><br><br> <!-- Caixa para confirmar a sua senha -->
+                                </div>
+                                <div id="buttons">
+                                <input type="submit" value="Enviar"> <!-- Botão para finalizar (submit/Enviar) o cadastro -->
+                                <input type="reset" value="Refazer"> <!-- Botão para ara refazer (reset/Limpar Tela) o cadastro -->
+                                </div>
+                                <div class="skip">
+                                        <a href="login.html"> Já possui conta? </a>
+                                </div>
+                        </form>
                 </section>
             </div>
         </div>
