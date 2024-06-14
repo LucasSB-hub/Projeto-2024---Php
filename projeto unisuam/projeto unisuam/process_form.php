@@ -23,16 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("CPF inválido.");
     }
 
-    /*
-    // Validação do Telefone
-    if (!preg_match("/^\(\+55\)\d{2}-\d{8}$/", $telefone_celular)) {
-        die("Telefone Celular no formato inválido.");
-    }
-    if (!preg_match("/^\(\+55\)\d{2}-\d{8}$/", $telefone_fixo)) {
-        die("Telefone Fixo no formato inválido.");
-    }
-    */
-
     // Validação do Login
     if (strlen($login) != 6 || !ctype_alpha($login)) {
         die("Login deve ter exatamente 6 caracteres alfabéticos.");
