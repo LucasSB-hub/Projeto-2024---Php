@@ -71,7 +71,7 @@ label {
 }
 
 /* Estilos para os inputs de texto, data, telefone, email e senha */
-input[type="text"], input[type="date"], input[type="tel"], input[type="email"], input[type="password"] {
+input[type="text"], input[type="date"], input[type="email"], input[type="password"] {
     width: 100%;
     height: 35px;
     font-size: larger;
@@ -84,7 +84,7 @@ input[type="text"], input[type="date"], input[type="tel"], input[type="email"], 
 }
 
 @media(max-width:940px){
-    input[type="text"], input[type="date"], input[type="tel"], input[type="email"], input[type="password"]{
+    input[type="text"], input[type="date"], input[type="email"], input[type="password"]{
         font-size: smaller;
     }
 }
@@ -111,7 +111,7 @@ select {
     justify-content: space-around;
 }
 
-input[type="submit"] {
+button[type="submit"] {
     color: #ffffff;
     width: 25%;
     height: 50%;
@@ -125,7 +125,7 @@ input[type="submit"] {
     border-radius: 5px;
 }
 
-input[type="reset"] {
+button[type="reset"] {
     color: #ffffff;
     width: 25%;
     height: 50%;
@@ -140,27 +140,27 @@ input[type="reset"] {
 }
 
 /* Estilos para quando o mouse passa sobre os botões */
-input[type="submit"]:hover, input[type="reset"]:hover {
+button[type="submit"]:hover, button[type="reset"]:hover {
     background-color: #c1e8ff; /* Ajusta o fundo para um tom mais claro */
     color: #09090a;
     text-shadow: 0 0 5px rgba(70, 70, 70, 0.485); /* Adiciona um brilho claro à fonte */
 }
 
-input[type="reset"]:hover {
+button[type="reset"]:hover {
     background-color: #c1e8ff; /* Ajusta o fundo para um tom mais claro */
     color: #09090a;
     text-shadow: 0 0 5px rgba(70, 70, 70, 0.485); /* Adiciona um brilho claro à fonte */
 }
 
 @media(max-width:940px){
-    input[type="submit"]{
+    button[type="submit"]{
         font-size: 75%;
         justify-content: center;
     }
 }
 
 @media(max-width:940px){
-    input[type="reset"]{
+    button[type="reset"]{
         font-size: 75%;
         justify-content: center;
     }
