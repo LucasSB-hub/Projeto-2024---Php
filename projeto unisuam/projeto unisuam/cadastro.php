@@ -73,12 +73,7 @@
                                 <input type="text" name="telefone_fixo" id="telefone_fixo" maxlength="14" 
                                 required><br><br> <!-- Caixa para registrar o número de telefone fixo -->
                         </div>
-                        
-                        <div class="caixa">
-                            <label for="endereco"> <b>Endereço Completo:</b> </label><br> 
-                                <input type="text" name="endereco_completo" required><br><br> <!-- Caixa para registrar o endereço completo -->
-                        </div>
-
+                    
                         <div class="caixa">
                             <label for="login"> <b>Login:</b> </label><br>
                                 <input type="text" name="login" required><br><br> <!-- Caixa para registrar o nome de usuário/login -->
@@ -93,11 +88,18 @@
                                 <label for="confirma_senha"> <b>Confirmação de Senha:</b> </label><br>
                             <input type="password" name="confirma_senha" required><br><br> <!-- Caixa confirmar a senha registrada -->
                         </div>
+                       
+                        <div class="caixa">
+                            <label for="endereco"> <b>Endereço Completo:</b> </label><br> 
+                                <input type="text" placeholder="Bairro, Comp, NºCasa, Nome Rua, CEP" 
+                                name="endereco_completo" required><br><br> <!-- Caixa para registrar o endereço: bairro, complemento, número da casa, nome da rua e CEP  -->
+                        </div><br><br>
+
                         <div id="buttons">
                             <button type="submit">Enviar</button> <!-- Botão para finalizar (submit/Enviar) o cadastro -->
                             <button type="reset">Limpar Tela</button> <!-- Botão para refazer (reset/Limpar Tela) o cadastro -->
                         </div>
-
+                        
                         <div class="skip">
                             <a href="login.php"> Já possui conta? </a>
                         </div> <!-- Link para a página de login, caso o usuário já estiver cadastro -->
