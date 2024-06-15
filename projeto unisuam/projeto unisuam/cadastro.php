@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, inicial-scale=1.0">
-        <title>Formulário de Cadastro</title>
+        <title>Cadastro</title>
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="css\cadastro.css">
+        <link rel="stylesheet" href="css/cadastro.css">
         <style>
             .error {
                 color: red;
@@ -19,7 +19,7 @@
 
     <body>
     
-        <div id="background"> <!-- Caixa para definir a margem, a imagem de fundo e as cores. -->
+        <div id="background"> <!-- Caixa para definir a margem, a imagem de fundo e as cores. type="text/css" -->
                 
             <div class="container">
 
@@ -54,7 +54,8 @@
 
                         <div class="caixa">
                             <label for="cpf"> <b>CPF:</b> </label><br> 
-                            <input type="text" id="cpf" name="cpf" maxlength="14" required><br><br> <!-- Caixa para registrar o CPF -->
+                            <input type="text" id="cpf" name="cpf" placeholder="XXX.XXX.XXX-XX" 
+                            maxlength="14" required><br><br> <!-- Caixa para registrar o CPF -->
                         </div>
 
                         <div class="caixa">
@@ -64,16 +65,22 @@
 
                         <div class="caixa">
                             <label for="telefone_celular"> <b>Número de Celular:</b> </label><br>
-                                <input type="text" name="telefone_celular" id="telefone_celular" maxlength="15" 
+                                <input type="text" name="telefone_celular" placeholder="XXYYYYYYYYY" id="telefone_celular" maxlength="15" 
                                 required><br><br> <!-- Caixa para registrar o número de celular -->
                         </div>
                         
                         <div class="caixa">
                             <label for="telefone_fixo"> <b>Número de Telefone Fixo:</b> </label><br>
-                                <input type="text" name="telefone_fixo" id="telefone_fixo" maxlength="14" 
+                                <input type="text" name="telefone_fixo" id="telefone_fixo" placeholder="XXYYYYYYYY" maxlength="14" 
                                 required><br><br> <!-- Caixa para registrar o número de telefone fixo -->
                         </div>
-                    
+                        <!--
+                        <div class="caixa">
+                            <label for="endereco"> <b>Bairro, Complemento, Nº da Casa, Nome da Rua, CEP:</b> </label><br> 
+                                <input type="text" placeholder="Endereço Completo" 
+                                name="endereco_completo" required><br><br> 
+                        </div> -->
+
                         <div class="caixa">
                             <label for="login"> <b>Login:</b> </label><br>
                                 <input type="text" name="login" required><br><br> <!-- Caixa para registrar o nome de usuário/login -->
@@ -91,13 +98,13 @@
                        
                         <div class="caixa">
                             <label for="endereco"> <b>Endereço Completo:</b> </label><br> 
-                                <input type="text" placeholder="Bairro, Comp, NºCasa, Nome Rua, CEP" 
-                                name="endereco_completo" required><br><br> <!-- Caixa para registrar o endereço: bairro, complemento, número da casa, nome da rua e CEP  -->
+                                <input type="text" placeholder="Bairro, Complemento, Nº da Casa, Nome da Rua, CEP" 
+                                name="endereco_completo" required><br><br> 
                         </div><br><br>
 
                         <div id="buttons">
                             <button type="submit">Enviar</button> <!-- Botão para finalizar (submit/Enviar) o cadastro -->
-                            <button type="reset">Limpar Tela</button> <!-- Botão para refazer (reset/Limpar Tela) o cadastro -->
+                            <button type="reset">Refazer</button> <!-- Botão para refazer (reset/Limpar Tela) o cadastro -->
                         </div>
                         
                         <div class="skip">
