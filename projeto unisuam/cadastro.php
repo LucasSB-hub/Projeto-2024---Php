@@ -42,8 +42,10 @@
                         <div class="caixa">
                             <label for="sexo"> <b>Sexo:</b> </label><br><br>
                                 <select id="sexo" name="sexo" required> 
-                                    <option value="F">Feminino</option> 
-                                    <option value="M">Masculino</option>
+                                    <option value="M">Masculino</option> 
+                                    <option value="F">Feminino</option>
+                                    <option value="O">Outro</option>
+                                    <option value="P">Prefiro não dizer</option>
                                 </select><br><br> <!-- Caixa para registrar o sexo -->
                         </div>
 
