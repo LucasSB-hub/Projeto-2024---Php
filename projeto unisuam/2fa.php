@@ -6,10 +6,15 @@ if (!isset($_SESSION['login'])) {
     exit();
 }
 
+// Inicializa o contador de tentativas
+if (!isset($_SESSION['attempts'])) {
+    $_SESSION['attempts'] = 0;
+}
+
+// Perguntas de segurança mapeadas para os campos no banco de dados
 $questions = [
     "Qual o nome da sua mãe?" => "nome_materno",
     "Qual a data do seu nascimento?" => "data_nascimento",
-    "Qual o CEP do seu endereço?" => "cep"
 ];
 
 if (!isset($_SESSION['question'])) {
@@ -31,17 +36,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Consulta no Banco de Dados para verificar a resposta de segurança
-    $sql = "SELECT $field FROM usuarios WHERE login = ?";
+    $sql = "SELECT $field, security_question FROM usuarios WHERE login = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $login);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($stored_answer);
+        $stmt->bind_result($stored_answer, $security_question);
         $stmt->fetch();
 
         if (strcasecmp($answer, $stored_answer) == 0) {
+            // Resposta correta, atualiza a pergunta de verificação no banco de dados
+            $update_sql = "UPDATE usuarios SET security_question = ? WHERE login = ?";
+            $update_stmt = $conn->prepare($update_sql);
+            $update_stmt->bind_param("ss", $question, $login);
+            $update_stmt->execute();
+            $update_stmt->close();
+
+            // Redireciona para a página principal após a autenticação bem-sucedida
             header("Location: index.php");
             exit();
         } else {
@@ -63,6 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">

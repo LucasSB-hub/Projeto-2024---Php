@@ -1,73 +1,120 @@
+<?php
+session_start();
+
+$is_logged_in = false;
+$username = '';
+$is_admin = false; // Definindo a variável $is_admin
+
+if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
+    $is_logged_in = true;
+    $username = $_SESSION['login'];
+
+    // Verifica se o usuário é o administrador (exemplo)
+    if ($username === 'adm11') {
+        $is_admin = true;
+    }
+}
+
+// Função para fazer logout
+if (isset($_POST['logout'])) {
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> SPACE GAMES </title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Font Awesome CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACE GAMES</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-  <header class="text-white text-center p-2" style="background-color: blue;">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12">
-          <div class="pix">
-            <i class="fas fa-wallet mr-2"></i>
-            Aceitamos Pix
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="img/ESPACE GAMES.png" alt="Logo" class="mr-2">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <form class="form-inline my-2 my-lg-0 search-bar">
-          <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-          <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-        </form>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item cart-icon">
-            <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fas fa-th"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-submenu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="error.html">PS4</a>
-              <a class="dropdown-item" href="error.html">PS5</a>
-              <a class="dropdown-item" href="error.html">Xbox-Series</a>
-              <a class="dropdown-item" href="error.html">Nintendo</a>
-              <a class="dropdown-item" href="subtela-pc.html">PC</a>
+    <header class="text-white text-center p-2" style="background-color: blue;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="pix">
+                        <i class="fas fa-wallet mr-2"></i>
+                        Aceitamos Cartões
+                    </div>
+                </div>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#contatoModal"><i class="fas fa-phone"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#rastreamentoModal"><i class="fas fa-shipping-fast"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html"><i class="fas fa-user"></i></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">
+                <img src="img/ESPACE GAMES.png" alt="Logo" class="mr-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="form-inline my-2 my-lg-0 search-bar">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                    <?php if (!$is_logged_in): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php"><i class="fas fa-user"></i></a>
+                    </li>
+                    <?php endif; ?>
+                    <?php if ($is_logged_in): ?>
+                    <li class="nav-item">
+                        <span class="nav-link">Olá, <?php echo htmlspecialchars($username); ?></span>
+                    </li>
+                    <li class="nav-item">
+                        <form method="post" class="logout-form">
+                            <button type="submit" name="logout" class="btn btn-link nav-link">Logout</button>
+                        </form>
+                    </li>
+                    <?php endif; ?>
+                    <li class="nav-item cart-icon">
+                        <a class="nav-link" href="carrinho.php"><i class="fas fa-shopping-cart"></i><span
+                                class="cart-count">0</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-th"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-submenu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="error.php">PS4</a>
+                          <a class="dropdown-item" href="error.php">PS5</a>
+                          <a class="dropdown-item" href="error.php">Xbox-Series</a>
+                          <a class="dropdown-item" href="error.php">Nintendo</a>
+                          <a class="dropdown-item" href="subtela-pc.php">PC</a>
+                          <?php if ($is_admin): ?>
+                              <a class="dropdown-item" href="logs_principal.php">Log Master</a>
+                              <a class="dropdown-item" href="consulta.php">Consulta Master</a>
+                          <?php endif; ?>
+                      </div>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#contatoModal"><i
+                                class="fas fa-phone"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#rastreamentoModal"><i
+                                class="fas fa-shipping-fast"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
   <!-- Contato Modal -->

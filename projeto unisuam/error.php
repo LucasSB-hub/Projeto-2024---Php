@@ -11,7 +11,7 @@
     <div class="error-container">
         <h1>Erro 404</h1>
         <p>Página não encontrada</p>
-        <p>Você pode voltar para a <a href="index.html">página inicial</a> ou tentar buscar novamente.</p>
+        <p>Você pode voltar para a <a href="index.php">página inicial</a> ou tentar buscar novamente.</p>
     </div>
     <script src="java/erro404.js"></script>
 </body>

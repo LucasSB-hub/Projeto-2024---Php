@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($senha, $senha_hash)) {
             $_SESSION['login'] = $login; // Armazena o login na sessão
+            $_SESSION['attempts'] = 0; // Inicializa o contador de tentativas
             header("Location: 2fa.php");
             exit();
         } else {
