@@ -117,3 +117,5 @@ window.onload = function () {
             menu.classList.toggle('bx-x');
             navlist.classList.toggle('open')
 }
+
+
