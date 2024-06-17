@@ -8,13 +8,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-        <script src="java/cadastro.js"></script>
-        <link rel="stylesheet" href="css/cadastro.css">
+        <script src="java/cadastro.js"></script> <!-- Link para o arquivo de JavaScript -->
+        <link rel="stylesheet" href="css/cadastro.css"> <!-- Link para o arquivo de CSS -->
         <style>
             .error {
                 color: red;
             }
-        </style>
+        </style> <!-- define a cor do texto como vermelho para elementos com a classe "error" -->
     </head>
     <body>    
         <div id="background"> <!-- Caixa para definir a margem, a imagem de fundo e as cores. type="text/css" -->                
@@ -65,23 +65,23 @@
                         <div class="caixa">
                             <label for="cep"><b>CEP:</b></label><br>
                             <input type="text" name="cep" id="cep" pattern="\d{5}-?\d{3}" 
-                            maxlength="9" placeholder="00000-000" required><br><br>
+                            maxlength="9" placeholder="00000-000" required><br><br> <!-- Caixa para registrar o número do CEP -->
                         </div>
                         <div class="caixa">
                             <label for="logradouro"><b>Logradouro:</b></label><br>
-                            <input type="text" name="logradouro" id="logradouro" required><br><br>
+                            <input type="text" name="logradouro" id="logradouro" required><br><br> <!-- Caixa para registrar o logradouro -->
                         </div>
                         <div class="caixa">
                             <label for="cidade"><b>Cidade:</b></label><br>
-                            <input type="text" name="cidade" id="cidade" required><br><br>
+                            <input type="text" name="cidade" id="cidade" required><br><br> <!-- Caixa para registrar o nome da cidade -->
                         </div>
                         <div class="caixa">
                             <label for="bairro"><b>Bairro:</b></label><br>
-                            <input type="text" name="bairro" id="bairro" required><br><br>
+                            <input type="text" name="bairro" id="bairro" required><br><br> <!-- Caixa para registrar o nome do bairro -->
                         </div>
                         <div class="caixa">
                             <label for="email"><b>E-mail:</b></label><br>
-                            <input type="email" name="email" id="email" required><br><br>
+                            <input type="email" name="email" id="email" required><br><br> <!-- Caixa para registrar o endereço de e-mail -->
                         </div>
                 <!--    <div class="caixa">
                             <label for="nome_usuario"><b>Nome de Usuário/Login:</b></label><br>
@@ -104,18 +104,17 @@
                             <button type="reset">Refazer</button> <!-- Botão para refazer (reset/Limpar Tela) o cadastro -->
                         </div>                        
                         <div class="skip">
-                            <a href="login.php"> Já possui conta? </a>
-                        </div> <!-- Link para a página de login, caso o usuário já estiver cadastro -->
+                            <a href="login.php"> Já possui conta? </a> <!-- Link para a página de login, caso o usuário já estiver cadastro -->
+                        </div> 
                     </form>
                 </section>
             </div>
-        </div>
-        <script>
-        // Adiciona um ouvinte de evento para o campo de entrada de CEP, que dispara quando o campo perde o foco (evento 'blur').
+        </div> <!-- O script abaixo se refere ao API para as caixas relacionadas ao endereço, adicionado pelo Lucas -->
+        <script> 
+                // Adiciona um ouvinte de evento para o campo de entrada de CEP, que dispara quando o campo perde o foco (evento 'blur').
             document.getElementById('cep').addEventListener('blur', function() {
                 // Obtém o valor do campo de entrada de CEP e remove todos os caracteres que não são dígitos.
                 var cep = this.value.replace(/\D/g, '');
-                
                 // Verifica se o CEP possui exatamente 8 dígitos.
                 if (cep.length === 8) {
                     // Faz uma requisição para a API do ViaCEP utilizando o CEP informado.
@@ -144,7 +143,7 @@
                     // Exibe um alerta se o CEP não tiver o formato válido (8 dígitos).
                     alert('Formato de CEP inválido.');
                 }
-            });
+            });            
         </script>
     </body>
 </html>
