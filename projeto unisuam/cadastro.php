@@ -79,10 +79,6 @@
                             <label for="bairro"><b>Bairro:</b></label><br>
                             <input type="text" name="bairro" id="bairro" required><br><br> <!-- Caixa para registrar o nome do bairro -->
                         </div>
-                        <div class="caixa">
-                            <label for="email"><b>E-mail:</b></label><br>
-                            <input type="email" name="email" id="email" required><br><br> <!-- Caixa para registrar o endereço de e-mail -->
-                        </div>
                 <!--    <div class="caixa">
                             <label for="nome_usuario"><b>Nome de Usuário/Login:</b></label><br>
                             <input type="text" name="nome_usuario" id="nome_usuario" required><br><br>
