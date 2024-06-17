@@ -9,7 +9,7 @@
 
 /* Estilos para o corpo da página */
 body {
-    background-color: #ecf0f1;
+    background-color: #7da0ca;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -27,7 +27,7 @@ body {
     margin-top:80px;
     margin-bottom: 50px;
     font-size: 100%;
-    background-color: #5483b3da;
+    background-color: #ffffff;
     backdrop-filter: blur(5px);
     border: 2px solid rgba(194, 187, 187, 0.242);
     border-radius: 25px 25px;
@@ -74,11 +74,12 @@ label {
 input[type="text"], input[type="date"], input[type="email"], input[type="password"] {
     width: 100%;
     height: 35px;
-    font-size: larger;
-    color: rgb(255, 255, 255);
-    background-color: rgba(255, 255, 255, 0.045);
+    font-size: smaller;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.5);
     border: none; /* Remove todas as bordas */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.305); /* Adiciona uma borda inferior */
+    border-bottom: 1px solid rgb(0, 0, 0); /* Adiciona uma borda inferior */
     outline: none; /* Remove a borda ao focar */
     
 }
@@ -92,10 +93,10 @@ input[type="text"], input[type="date"], input[type="email"], input[type="passwor
 /* Estilos para os selects, as opções de sexo */
 select {
     width: 100%;
-    font-size: larger;
-    color: white;
+    font-size: 115%;
+    color: rgb(0, 0, 0);
     border: none; /* Rrgba(0, 0, 0, 0)s */
-    background-color: rgba(0, 0, 0, 0.300);
+    background-color: rgba(255, 255, 255, 0.500);
     
 }
 
@@ -169,7 +170,7 @@ button[type="reset"]:hover {
 /* Estilos para o cabeçalho h1 */
 h1 {
     display: flex;
-    color: white;
+    color: rgb(0, 0, 0);
     justify-content: left;
     font-size: 275%;
     margin-top: 3%;
@@ -180,7 +181,7 @@ h1 {
 @media(max-width:940px){
     h1{
         display: flex;
-        color: white;
+        color: rgb(0, 0, 0);
         justify-content: center;
         font-size: 225%;
         margin-top: 3%;
@@ -200,7 +201,7 @@ h1 {
 /* Estilos para o formulário */
 form {
     margin: 1%;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .skip {
