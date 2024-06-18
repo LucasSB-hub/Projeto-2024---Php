@@ -37,7 +37,7 @@
                     </label>
 
                     <a class="password" href="cadastro.php"> Não tem conta? Clique aqui! </a>
-                    <a class="password" href="2fa.php">Esqueceu sua Senha?</a>
+                    <a class="password" href="recuperacao.php">Esqueceu sua Senha?</a>
                     
                     
                     <button class="btn btn-second" type="submit">concluir</button>        

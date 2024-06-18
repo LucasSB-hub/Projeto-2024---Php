@@ -99,6 +99,7 @@ if (isset($_POST['logout'])) {
                           <?php if ($is_admin): ?>
                               <a class="dropdown-item" href="logs_principal.php">Log Master</a>
                               <a class="dropdown-item" href="consulta.php">Consulta Master</a>
+                              <a class="dropdown-item" href="produtos.php">Cadastrar Produtos</a>
                           <?php endif; ?>
                       </div>
 
