@@ -90,6 +90,29 @@ input[type="text"], input[type="date"], input[type="email"], input[type="passwor
     }
 }
 
+/* Estilos para o botão de sugerir senha */
+.botaum {
+    margin: 0%;    
+    height: 0%;
+    font-size: smaller;
+    background-color: #05275900;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 0%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botaum:hover {
+    color: #052659;
+}
+
+.toggle-password {
+    cursor: pointer;
+    padding-top: 2%;
+}
+
+
 /* Estilos para os selects, as opções de sexo */
 select {
     width: 100%;
