@@ -1,4 +1,7 @@
 <?php
+
+// PHP conectado ao cadastro
+
 function generateRandomPassword($length = 8) {
     // Conjunto de caracteres alfabéticos (maiúsculos e minúsculos)
     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
