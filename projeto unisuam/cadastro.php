@@ -108,7 +108,7 @@
         <script> 
         // Função para gerar senha
         function generatePassword() {
-            fetch('http://localhost/cadastro-novo/apisenhas.php')
+            fetch('http://localhost/projeto unisuam/apisenhas.php')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
