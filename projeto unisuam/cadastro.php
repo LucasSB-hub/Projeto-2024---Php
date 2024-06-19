@@ -11,10 +11,10 @@
         <script src="java/cadastro.js"></script>
         <link rel="stylesheet" href="cadastro.css">
         <style>
-            .error {
-                color: red;
-            }
-        </style>
+        .error {
+            color: red;
+        }
+    </style>
     </head>
     <body>    
         <div id="background"> <!-- Caixa para definir a margem, a imagem de fundo e as cores. type="text/css" -->                
@@ -80,18 +80,21 @@
                             <input type="text" name="bairro" id="bairro" required><br><br> <!-- Caixa para registrar o nome do bairro -->
                         </div>
                         <div class="caixa">
+                            <label for="senha"> <b>Senha:</b> </label>
+                                <input type="password" name="senha" id="senha" required><br>
+                                <i class='bx bx-hide toggle-password' onclick="togglePasswordVisibility('senha', this)"></i>
+                                <button type="button" class="botaum" onclick="generatePassword()">Sugerir Senha</button>
+                        </div>
+                        <div class="caixa">
+                            <label for="confirma_senha"> <b>Confirmação de Senha:</b> </label><br>
+                                <input type="password" name="confirma_senha" id="confirma_senha" required><br>
+                                <i class='bx bx-hide toggle-password' onclick="togglePasswordVisibility('confirma_senha', this)"></i><br>
+                        </div><br><br>
+                        <div class="caixa">
                             <label for="login"> <b>Login:</b> </label><br>
-                                <input type="text" name="login" required><br><br>  <!-- Caixa para registrar o nome de usuário/login -->
-                        </div>
-                        <div class="caixa">
-                            <label for="senha"> <b>Senha:</b> </label><br>
-                                <input type="password" name="senha" required><br><br> <!-- Caixa para registrar a senha -->
-                        </div>
-                        <div class="caixa">
-                                <label for="confirma_senha"> <b>Confirmação de Senha:</b> </label><br>
-                            <input type="password" name="confirma_senha" required><br><br> <!-- Caixa confirmar a senha registrada -->
-                        </div>
-                        <div id="buttons">
+                                <input type="text" name="login" id="login" required><br><br> <!-- Caixa para registrar o nome de usuário/login -->
+                        </div><br><br>
+                        <div id="buttons">                            
                             <button type="submit">Enviar</button> <!-- Botão para finalizar (submit/Enviar) o cadastro -->
                             <button type="reset">Refazer</button> <!-- Botão para refazer (reset/Limpar Tela) o cadastro -->
                         </div>                        
@@ -102,8 +105,25 @@
                 </section>
             </div>
         </div>
-        <script>
-            
+        <script> 
+        // Função para gerar senha
+        function generatePassword() {
+            fetch('http://localhost/cadastro-novo/apisenhas.php')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data); // Adicione este log para verificar a resposta
+                    document.getElementById('senha').value = data.password;
+                })
+                .catch(error => {
+                    console.error('Erro ao gerar a senha:', error);
+                    alert('Erro ao gerar a senha.');
+                });
+        }    
         // Adiciona um ouvinte de evento para o campo de entrada de CEP, que dispara quando o campo perde o foco (evento 'blur').
             document.getElementById('cep').addEventListener('blur', function() {
                 // Obtém o valor do campo de entrada de CEP e remove todos os caracteres que não são dígitos.
@@ -138,6 +158,19 @@
                     alert('Formato de CEP inválido.');
                 }
             });
+            // Função para alternar a visibilidade da senha
+        function togglePasswordVisibility(fieldId, icon) {
+            var passwordField = document.getElementById(fieldId);
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.remove('bx-hide');
+                icon.classList.add('bx-show');
+            } else {
+                passwordField.type = "password";
+                icon.classList.remove('bx-show');
+                icon.classList.add('bx-hide');
+            }
+        }
         </script>
     </body>
 </html>
