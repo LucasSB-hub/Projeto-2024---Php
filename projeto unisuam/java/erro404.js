@@ -1,7 +1,7 @@
 // Verifica se a página não existe e redireciona para a página de erro
 window.addEventListener('error', function(event) {
     if (event.target.tagName === 'A') {
-        window.location.href = 'error.html';
+        window.location.href = 'error.php';
     }
 }, true);
 
@@ -11,7 +11,7 @@ function buscarConteudo() {
     const erroNaBusca = true; // Você pode alterar isso para testar
 
     if (erroNaBusca) {
-        window.location.href = 'error.html';
+        window.location.href = 'error.php';
     } else {
         // Lógica para busca bem-sucedida
     }
